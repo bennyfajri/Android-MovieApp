@@ -1,8 +1,8 @@
 package com.benny.movieapp.data.remote
 
-import androidx.room.Query
 import com.benny.movieapp.BuildConfig
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface MovieApi {
     companion object{
