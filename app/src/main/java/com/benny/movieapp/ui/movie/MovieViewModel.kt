@@ -5,4 +5,5 @@ import androidx.lifecycle.ViewModel
 import com.benny.movieapp.data.remote.MovieRepository
 
 class MovieViewModel @ViewModelInject constructor (private val repository: MovieRepository) : ViewModel() {
+    val movies = repository.getNowPlayingMovies()
 }
