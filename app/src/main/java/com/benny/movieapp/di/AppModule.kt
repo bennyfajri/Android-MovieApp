@@ -4,13 +4,14 @@ import com.benny.movieapp.data.remote.MovieApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ApplicationComponent
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
 import javax.inject.Singleton
 
 @Module
-@InstallIn
+@InstallIn(ApplicationComponent::class)
 object AppModule {
 
     @Provides
