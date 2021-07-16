@@ -10,6 +10,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MovieFragment : Fragment(R.layout.fragment_movie) {
+
     private val viewModel by viewModels<MovieViewModel>()
     private var _binding : FragmentMovieBinding? = null
     private val binding get() = _binding!!
@@ -21,7 +22,10 @@ class MovieFragment : Fragment(R.layout.fragment_movie) {
         val adapter = MovieAdapter()
         binding.apply {
             rvMovie.setHasFixedSize(true)
-            rvMovie.adapter = adapter
+            rvMovie.adapter = adapter.withLoadStateHeaderAndFooter(
+                header = MovieLoadStateAdapter{adapter.retry()},
+                footer = MovieLoadStateAdapter {adapter.retry()}
+            )
         }
 
         viewModel.movies.observe(viewLifecycleOwner){

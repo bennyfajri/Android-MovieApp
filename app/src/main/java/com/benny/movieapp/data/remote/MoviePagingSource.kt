@@ -10,11 +10,10 @@ class MoviePagingSource(
     private val movieApi: MovieApi
     ) : PagingSource<Int, Movie>() {
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Movie> {
-
         return try {
             val position = params.key ?: STARTING_PAGE_INDEX
             val response = movieApi.getNowPlayingMovies(position)
-            val movies = response.result
+            val movies = response.results
 
             LoadResult.Page(
                 data = movies,
