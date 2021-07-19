@@ -12,10 +12,21 @@ import com.benny.movieapp.databinding.ItemMovieBinding
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 
-class MovieAdapter : PagingDataAdapter<Movie, MovieAdapter.MoviewViewHolder>(COMPARATOR) {
+class MovieAdapter (private val listener : OnItemClickListener) : PagingDataAdapter<Movie, MovieAdapter.MoviewViewHolder>(COMPARATOR) {
 
     inner class MoviewViewHolder(private val binding: ItemMovieBinding) :
         RecyclerView.ViewHolder(binding.root) {
+        init{
+            binding.root.setOnClickListener {
+                val position =  bindingAdapterPosition
+                if(position != RecyclerView.NO_POSITION){
+                    val item = getItem(position)
+                    if(item!= null){
+                        listener.onClick(item)
+                    }
+                }
+            }
+        }
         fun bind(movie: Movie) {
             with(binding) {
                 Glide.with(itemView)
@@ -51,6 +62,10 @@ class MovieAdapter : PagingDataAdapter<Movie, MovieAdapter.MoviewViewHolder>(COM
                 oldItem == newItem
 
         }
+    }
+
+    interface  OnItemClickListener{
+        fun onClick(movie: Movie)
     }
 
 

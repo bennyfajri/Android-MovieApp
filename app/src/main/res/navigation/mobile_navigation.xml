@@ -15,4 +15,11 @@
         android:name="com.benny.movieapp.ui.movie.MovieFragment"
         android:label="Movie"
         tools:layout="@layout/fragment_movie" />
+    <fragment
+        android:id="@+id/nav_detail"
+        android:name="com.benny.movieapp.ui.details.DetailsFragment"
+        android:label="Detail"
+        tools:layout="@layout/fragment_details" />
+
+
 </navigation>
