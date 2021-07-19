@@ -32,6 +32,9 @@ class MainActivity : AppCompatActivity() {
         binding.apply {
             navBottom.setupWithNavController(navController)
         }
+    }
 
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp() || super.onSupportNavigateUp()
     }
 }

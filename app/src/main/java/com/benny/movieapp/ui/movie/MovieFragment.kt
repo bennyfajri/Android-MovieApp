@@ -9,13 +9,15 @@ import androidx.core.view.isVisible
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import com.benny.movieapp.R
+import com.benny.movieapp.data.remote.Movie
 import com.benny.movieapp.databinding.FragmentMovieBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MovieFragment : Fragment(R.layout.fragment_movie) {
+class MovieFragment : Fragment(R.layout.fragment_movie), MovieAdapter.OnItemClickListener {
 
     private val viewModel by viewModels<MovieViewModel>()
     private var _binding : FragmentMovieBinding? = null
@@ -25,7 +27,7 @@ class MovieFragment : Fragment(R.layout.fragment_movie) {
         super.onViewCreated(view, savedInstanceState)
 
         _binding = FragmentMovieBinding.bind(view)
-        val adapter = MovieAdapter()
+        val adapter = MovieAdapter(this)
 
         binding.apply {
             rvMovie.setHasFixedSize(true)
@@ -84,5 +86,10 @@ class MovieFragment : Fragment(R.layout.fragment_movie) {
             }
 
         })
+    }
+
+    override fun onClick(movie: Movie) {
+        val action = MovieFragmentDirections.actionNavMovieToNavDetail(movie)
+        findNavController().navigate(action)
     }
 }
