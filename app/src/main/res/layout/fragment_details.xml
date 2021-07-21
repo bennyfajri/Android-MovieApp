@@ -34,7 +34,6 @@
                 android:textOff=""
                 android:textOn=""/>
 
-
             <TextView
                 android:id="@+id/tv_movie_title"
                 android:layout_width="wrap_content"

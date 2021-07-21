@@ -4,7 +4,7 @@
     android:drawable="@drawable/ic_favorite_red"
     android:state_checked="true"/>
     <item
-        android:drawable="@color/white"
+        android:drawable="@drawable/ic_favorite_white"
         android:state_checked="false"/>
 
 
