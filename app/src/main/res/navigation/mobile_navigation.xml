@@ -9,7 +9,11 @@
         android:id="@+id/nav_favorite"
         android:name="com.benny.movieapp.ui.favorite.FavoriteFragment"
         android:label="Favorite"
-        tools:layout="@layout/fragment_favorite" />
+        tools:layout="@layout/fragment_favorite" >
+        <action
+            android:id="@+id/action_nav_favorite_to_nav_detail"
+            app:destination="@id/nav_detail" />
+    </fragment>
     <fragment
         android:id="@+id/nav_movie"
         android:name="com.benny.movieapp.ui.movie.MovieFragment"

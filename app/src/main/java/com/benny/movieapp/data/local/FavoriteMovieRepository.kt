@@ -11,4 +11,5 @@ class FavoriteMovieRepository @Inject constructor(
     suspend fun removeFromFavorite(id: String){
         favoriteMovieDao.removeFromFavorite(id)
     }
+    fun getFavoriteMovies() = favoriteMovieDao.getFavoriteMode()
 }

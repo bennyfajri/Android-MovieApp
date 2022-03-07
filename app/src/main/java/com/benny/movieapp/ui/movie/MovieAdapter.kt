@@ -12,21 +12,24 @@ import com.benny.movieapp.databinding.ItemMovieBinding
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 
-class MovieAdapter (private val listener : OnItemClickListener) : PagingDataAdapter<Movie, MovieAdapter.MoviewViewHolder>(COMPARATOR) {
+class MovieAdapter(
+    private val listener: OnItemClickListener
+) : PagingDataAdapter<Movie, MovieAdapter.MoviewViewHolder>(COMPARATOR) {
 
     inner class MoviewViewHolder(private val binding: ItemMovieBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        init{
+        init {
             binding.root.setOnClickListener {
-                val position =  bindingAdapterPosition
-                if(position != RecyclerView.NO_POSITION){
+                val position = bindingAdapterPosition
+                if (position != RecyclerView.NO_POSITION) {
                     val item = getItem(position)
-                    if(item!= null){
+                    if (item != null) {
                         listener.onClick(item)
                     }
                 }
             }
         }
+
         fun bind(movie: Movie) {
             with(binding) {
                 Glide.with(itemView)
@@ -48,13 +51,13 @@ class MovieAdapter (private val listener : OnItemClickListener) : PagingDataAdap
 
     override fun onBindViewHolder(holder: MoviewViewHolder, position: Int) {
         val currentItem = getItem(position)
-        if(currentItem != null){
+        if (currentItem != null) {
             holder.bind(currentItem)
         }
     }
 
-    companion object{
-        private val COMPARATOR = object : DiffUtil.ItemCallback<Movie>(){
+    companion object {
+        private val COMPARATOR = object : DiffUtil.ItemCallback<Movie>() {
             override fun areItemsTheSame(oldItem: Movie, newItem: Movie): Boolean =
                 oldItem.id == newItem.id
 
@@ -64,11 +67,9 @@ class MovieAdapter (private val listener : OnItemClickListener) : PagingDataAdap
         }
     }
 
-    interface  OnItemClickListener{
+    interface OnItemClickListener {
         fun onClick(movie: Movie)
     }
-
-
 
 
 }
