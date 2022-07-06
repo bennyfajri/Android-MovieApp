@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">MovieApp</string>
+    <string name="title_activity_detail_home">DetailHomeActivity</string>
+
+    <string name="search">Masukkan kata</string>
+    <string name="image_description">Gambar</string>
+    <string name="menu_favorite">Favorite</string>
+    <string name="text_subtitle">Contoh text subtitle</string>
 </resources>

@@ -1,10 +1,13 @@
 package com.benny.movieapp.ui.movie
 
+import android.app.SearchManager
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.View
-import android.widget.SearchView
+import androidx.appcompat.widget.SearchView
 import androidx.core.view.isVisible
 
 import androidx.fragment.app.Fragment
@@ -14,12 +17,14 @@ import androidx.paging.LoadState
 import com.benny.movieapp.R
 import com.benny.movieapp.data.remote.Movie
 import com.benny.movieapp.databinding.FragmentMovieBinding
+import com.benny.movieapp.ui.details.DetailActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MovieFragment : Fragment(R.layout.fragment_movie), MovieAdapter.OnItemClickListener {
 
-    private val viewModel by viewModels<MovieViewModel>()
+    private val viewModel: MovieViewModel by viewModels()
+
     private var _binding : FragmentMovieBinding? = null
     private val binding get() = _binding!!
 
@@ -64,32 +69,31 @@ class MovieFragment : Fragment(R.layout.fragment_movie), MovieAdapter.OnItemClic
         setHasOptionsMenu(true)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater){
         inflater.inflate(R.menu.menu_search, menu)
 
-        val searchItem = menu.findItem(R.id.action_search)
-        val searchView = searchItem.actionView as SearchView
+        val searchManager = requireActivity().getSystemService(Context.SEARCH_SERVICE) as SearchManager
+        val searchView = menu.findItem(R.id.action_search).actionView as SearchView
 
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(requireActivity().componentName))
+        searchView.queryHint = resources.getString(R.string.search)
+        searchView.setOnQueryTextListener(object  : SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
-                if(query != null){
-                    binding.rvMovie.scrollToPosition(0)
-                    viewModel.searchMovies(query)
-                    searchView.clearFocus()
-                }
+                viewModel.searchMovies(query.toString())
+                searchView.clearFocus()
                 return true
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                return true
+                return false
             }
-
         })
     }
 
     override fun onClick(movie: Movie) {
-        val action = MovieFragmentDirections.actionNavMovieToNavDetail(movie)
-        findNavController().navigate(action)
+        Intent(context, DetailActivity::class.java).also {
+            it.putExtra(DetailActivity.EXTRA_DATA, movie)
+            requireContext().startActivity(it)
+        }
     }
 }

@@ -1,15 +1,17 @@
 package com.benny.movieapp.ui.details
 
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
 import com.benny.movieapp.data.local.FavoriteMovie
 import com.benny.movieapp.data.local.FavoriteMovieRepository
 import com.benny.movieapp.data.remote.Movie
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class DetailsViewModel @ViewModelInject constructor(
+@HiltViewModel
+class DetailsViewModel @Inject constructor(
     private val repository: FavoriteMovieRepository
 ): ViewModel(){
     fun addToFavorite(movie : Movie){

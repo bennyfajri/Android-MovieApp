@@ -36,7 +36,4 @@ class MovieLoadStateAdapter(private val retry: () -> Unit) : LoadStateAdapter<Mo
         holder.bind(loadState)
     }
 
-
-
-
 }

@@ -2,30 +2,46 @@ package com.benny.movieapp.di
 
 import android.content.Context
 import androidx.room.Room
-import com.benny.movieapp.data.local.FavoriteMovie
+import com.benny.movieapp.BuildConfig
 import com.benny.movieapp.data.local.FavoriteMovieDatabase
 import com.benny.movieapp.data.remote.MovieApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ApplicationComponent
 import dagger.hilt.android.qualifiers.ApplicationContext
+import dagger.hilt.components.SingletonComponent
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 import javax.inject.Singleton
 
 @Module
-@InstallIn(ApplicationComponent::class)
+@InstallIn(SingletonComponent::class)
 object AppModule {
 
     @Provides
     @Singleton
-    fun provideRetrofit() : Retrofit =
-        Retrofit.Builder()
-            .baseUrl(MovieApi.BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
+    fun provideRetrofit(): Retrofit {
+        val loggingInterceptor = if (BuildConfig.DEBUG) {
+            HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
+        } else {
+            HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.NONE)
+        }
+
+        val client = OkHttpClient.Builder()
+            .addInterceptor(loggingInterceptor)
             .build()
+
+        val retrofit by lazy {
+            Retrofit.Builder()
+                .baseUrl(MovieApi.BASE_URL)
+                .client(client)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+        }
+        return retrofit
+    }
 
     @Provides
     @Singleton
@@ -38,7 +54,7 @@ object AppModule {
         @ApplicationContext app: Context
     ) = Room.databaseBuilder(
         app, FavoriteMovieDatabase::class.java,
-    "movie_db"
+        "movie_db"
     ).build()
 
     @Provides
