@@ -13,11 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MovieApp">
         <activity
-            android:name=".ui.details.DetailActivity"
+            android:name="com.benny.movieapp.details.DetailActivity"
             android:label="@string/title_activity_detail_home"
             android:theme="@style/Theme.MovieApp.NoActionBar"/>
         <activity
             android:name=".MainActivity"
+            android:theme="@style/Theme.MovieApp.NoActionBar"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -7,31 +7,17 @@
 
     <fragment
         android:id="@+id/nav_favorite"
-        android:name="com.benny.movieapp.ui.favorite.FavoriteFragment"
+        android:name="com.benny.movieapp.favorite.FavoriteFragment"
         android:label="Favorite"
         tools:layout="@layout/fragment_favorite" >
-        <action
-            android:id="@+id/action_nav_favorite_to_nav_detail"
-            app:destination="@id/nav_detail" />
     </fragment>
     <fragment
         android:id="@+id/nav_movie"
-        android:name="com.benny.movieapp.ui.movie.MovieFragment"
+        android:name="com.benny.movieapp.movie.MovieFragment"
         android:label="Movie"
         tools:layout="@layout/fragment_movie" >
-        <action
-            android:id="@+id/action_nav_movie_to_nav_detail"
-            app:destination="@id/nav_detail" />
     </fragment>
-    <fragment
-        android:id="@+id/nav_detail"
-        android:name="com.benny.movieapp.ui.details.DetailsFragment"
-        android:label="Detail"
-        tools:layout="@layout/fragment_details" >
-        <argument
-            android:name="movie"
-            app:argType="com.benny.movieapp.data.remote.Movie" />
-    </fragment>
+
 
 
 </navigation>

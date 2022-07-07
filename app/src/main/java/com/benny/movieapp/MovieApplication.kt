@@ -1,8 +1,31 @@
 package com.benny.movieapp
 
 import android.app.Application
-import dagger.hilt.android.HiltAndroidApp
+import com.benny.movieapp.core.di.databaseModule
+import com.benny.movieapp.core.di.networkModule
+import com.benny.movieapp.core.di.repositoryModule
+import com.benny.movieapp.di.useCaseModule
+import com.benny.movieapp.di.viewModelModule
+import org.koin.android.ext.koin.androidContext
+import org.koin.android.ext.koin.androidLogger
+import org.koin.core.context.startKoin
+import org.koin.core.logger.Level
 
-@HiltAndroidApp
 class MovieApplication : Application() {
+    override fun onCreate() {
+        super.onCreate()
+        startKoin {
+            androidLogger(Level.NONE)
+            androidContext(this@MovieApplication)
+            modules(
+                listOf(
+                    databaseModule,
+                    networkModule,
+                    repositoryModule,
+                    useCaseModule,
+                    viewModelModule
+                )
+            )
+        }
+    }
 }

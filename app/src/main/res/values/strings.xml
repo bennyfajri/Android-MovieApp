@@ -4,6 +4,15 @@
 
     <string name="search">Masukkan kata</string>
     <string name="image_description">Gambar</string>
-    <string name="menu_favorite">Favorite</string>
     <string name="text_subtitle">Contoh text subtitle</string>
+    <string name="no_data">Empty data</string>
+    <string name="something_wrong">Oops.. something went wrong</string>
+
+    <string name="menu_movie">Movie</string>
+    <string name="menu_map">Maps</string>
+    <string name="menu_favorite">Favorite</string>
+
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>
