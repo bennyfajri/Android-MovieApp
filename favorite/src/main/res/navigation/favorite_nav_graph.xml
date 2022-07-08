@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/favorite_fragment">
+
+    <fragment
+        android:id="@+id/favorite_fragment"
+        android:name="com.drsync.movieapp.favorite.FavoriteFragment"
+        android:label="@string/favorite_fragment"
+        app:moduleName="favorite"/>
+
+</navigation>

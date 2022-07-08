@@ -6,7 +6,7 @@
         <entry key="..\:/App/Android/MovieApp/app/src/main/res/drawable/ic_error.xml" value="0.1" />
         <entry key="..\:/App/Android/MovieApp/app/src/main/res/drawable/ic_movie.xml" value="0.1" />
         <entry key="..\:/App/Android/MovieApp/app/src/main/res/layout/activity_detail.xml" value="0.176" />
-        <entry key="..\:/App/Android/MovieApp/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/App/Android/MovieApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/App/Android/MovieApp/app/src/main/res/layout/app_bar_main.xml" value="0.1" />
         <entry key="..\:/App/Android/MovieApp/app/src/main/res/layout/content_detail_film.xml" value="0.1" />
         <entry key="..\:/App/Android/MovieApp/app/src/main/res/layout/content_main.xml" value="0.1" />
@@ -19,11 +19,15 @@
         <entry key="..\:/App/Android/MovieApp/app/src/main/res/layout/view_empty.xml" value="0.1" />
         <entry key="..\:/App/Android/MovieApp/app/src/main/res/layout/view_error.xml" value="0.1" />
         <entry key="..\:/App/Android/MovieApp/app/src/main/res/menu/activity_main_drawer.xml" value="0.1" />
-        <entry key="..\:/App/Android/MovieApp/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
+        <entry key="..\:/App/Android/MovieApp/app/src/main/res/menu/bottom_nav_menu.xml" value="0.22" />
         <entry key="..\:/App/Android/MovieApp/app/src/main/res/menu/menu_search.xml" value="0.1" />
         <entry key="..\:/App/Android/MovieApp/core/src/main/res/drawable/ic_error.xml" value="0.1" />
         <entry key="..\:/App/Android/MovieApp/core/src/main/res/drawable/shade.xml" value="0.1" />
         <entry key="..\:/App/Android/MovieApp/core/src/main/res/layout/item_movie.xml" value="0.264" />
+        <entry key="..\:/App/Android/MovieApp/favorite/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/App/Android/MovieApp/favorite/src/main/res/layout/fragment_blank.xml" value="0.1" />
+        <entry key="..\:/App/Android/MovieApp/favorite/src/main/res/layout/fragment_favorite.xml" value="0.1" />
+        <entry key="..\:/App/Android/MovieApp/favorite/src/main/res/layout/view_empty.xml" value="0.18697916666666667" />
       </map>
     </option>
   </component>

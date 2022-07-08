@@ -1,9 +1,8 @@
-package com.benny.movieapp.di
+package com.drsync.movieapp.di
 
-import com.benny.movieapp.details.DetailsViewModel
-import com.benny.movieapp.movie.MovieViewModel
 import com.drsync.core.domain.usecase.MovieInteractor
 import com.drsync.core.domain.usecase.MovieUseCase
+import com.drsync.movieapp.favorite.FavoriteViewModel
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
@@ -12,6 +11,5 @@ val useCaseModule = module {
 }
 
 val viewModelModule = module {
-    viewModel { MovieViewModel(get()) }
-    viewModel { DetailsViewModel(get()) }
+    viewModel { FavoriteViewModel(get()) }
 }

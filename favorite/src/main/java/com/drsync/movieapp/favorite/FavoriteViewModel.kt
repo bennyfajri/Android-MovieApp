@@ -1,4 +1,4 @@
-package com.benny.movieapp.favorite
+package com.drsync.movieapp.favorite
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
