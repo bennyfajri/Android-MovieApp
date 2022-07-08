@@ -1,9 +1,7 @@
 package com.drsync.core.ui
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
@@ -36,17 +34,6 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MoviewViewHolder>() {
 
     override fun getItemCount(): Int  = listData.size
 
-    companion object {
-        private val COMPARATOR = object : DiffUtil.ItemCallback<Movie>() {
-            override fun areItemsTheSame(oldItem: Movie, newItem: Movie): Boolean =
-                oldItem == newItem
-
-            @SuppressLint("DiffUtilEquals")
-            override fun areContentsTheSame(oldItem: Movie, newItem: Movie): Boolean =
-                oldItem.id == newItem.id
-        }
-    }
-
     inner class MoviewViewHolder(private val binding: ItemMovieBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(movie: Movie) {
@@ -59,6 +46,7 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MoviewViewHolder>() {
                     .into(ivMoviePoster)
 
                 tvMovieTitle.text = movie.originalTitle
+                tvRating.text = movie.voteAverage
             }
         }
 

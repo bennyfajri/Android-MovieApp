@@ -17,5 +17,8 @@ data class MovieResponse(
     val posterPath: String,
 
     @field:SerializedName("original_title")
-    val originalTitle: String
+    val originalTitle: String,
+
+    @field:SerializedName("vote_average")
+    val voteAverage: String
 ) : Parcelable

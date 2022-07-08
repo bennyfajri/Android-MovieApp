@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/App/Android/MovieApp/app/src/main/res/drawable/ic_error.xml" value="0.1" />
+        <entry key="..\:/App/Android/MovieApp/app/src/main/res/drawable/ic_favorite.xml" value="0.195" />
+        <entry key="..\:/App/Android/MovieApp/app/src/main/res/drawable/ic_favorite_no_border.xml" value="0.195" />
         <entry key="..\:/App/Android/MovieApp/app/src/main/res/drawable/ic_movie.xml" value="0.1" />
         <entry key="..\:/App/Android/MovieApp/app/src/main/res/layout/activity_detail.xml" value="0.176" />
         <entry key="..\:/App/Android/MovieApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
@@ -21,9 +23,10 @@
         <entry key="..\:/App/Android/MovieApp/app/src/main/res/menu/activity_main_drawer.xml" value="0.1" />
         <entry key="..\:/App/Android/MovieApp/app/src/main/res/menu/bottom_nav_menu.xml" value="0.22" />
         <entry key="..\:/App/Android/MovieApp/app/src/main/res/menu/menu_search.xml" value="0.1" />
+        <entry key="..\:/App/Android/MovieApp/core/src/main/res/drawable/ic_circle.xml" value="0.232" />
         <entry key="..\:/App/Android/MovieApp/core/src/main/res/drawable/ic_error.xml" value="0.1" />
         <entry key="..\:/App/Android/MovieApp/core/src/main/res/drawable/shade.xml" value="0.1" />
-        <entry key="..\:/App/Android/MovieApp/core/src/main/res/layout/item_movie.xml" value="0.264" />
+        <entry key="..\:/App/Android/MovieApp/core/src/main/res/layout/item_movie.xml" value="0.33" />
         <entry key="..\:/App/Android/MovieApp/favorite/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/App/Android/MovieApp/favorite/src/main/res/layout/fragment_blank.xml" value="0.1" />
         <entry key="..\:/App/Android/MovieApp/favorite/src/main/res/layout/fragment_favorite.xml" value="0.1" />

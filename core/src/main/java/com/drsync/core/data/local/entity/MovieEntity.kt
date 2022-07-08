@@ -24,6 +24,9 @@ data class MovieEntity(
     @ColumnInfo(name = "originalTitle")
     var originalTitle: String,
 
+    @ColumnInfo(name = "voteAverage")
+    var voteAverage: String,
+
     @ColumnInfo(name = "isFavorite")
     var isFavorite: Boolean = false
 ) : Parcelable

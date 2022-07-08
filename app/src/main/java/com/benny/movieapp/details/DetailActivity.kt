@@ -54,7 +54,7 @@ class DetailActivity : AppCompatActivity() {
             binding.fab.setImageDrawable(
                 ContextCompat.getDrawable(
                     this@DetailActivity,
-                    R.drawable.ic_favorite_red
+                    R.drawable.ic_favorite
                 )
             )
         } else {
