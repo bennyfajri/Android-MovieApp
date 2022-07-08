@@ -1,17 +1,13 @@
 package com.benny.movieapp.details
 
 import android.os.Bundle
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.lifecycleScope
 import com.benny.movieapp.R
-import com.benny.movieapp.core.data.remote.response.MovieResponse
-import com.benny.movieapp.core.domain.model.Movie
-import com.benny.movieapp.core.utils.Constant.IMAGE_URL
 import com.benny.movieapp.databinding.ActivityDetailBinding
 import com.bumptech.glide.Glide
-import kotlinx.coroutines.launch
+import com.drsync.core.domain.model.Movie
+import com.drsync.core.utils.Constant.IMAGE_URL
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class DetailActivity : AppCompatActivity() {

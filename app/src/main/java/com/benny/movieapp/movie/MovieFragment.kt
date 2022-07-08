@@ -9,11 +9,10 @@ import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.benny.movieapp.R
-import com.benny.movieapp.core.data.Resource
-import com.benny.movieapp.core.ui.MovieAdapter
 import com.benny.movieapp.databinding.FragmentMovieBinding
 import com.benny.movieapp.details.DetailActivity
 import com.benny.movieapp.details.DetailActivity.Companion.EXTRA_DATA
+import com.drsync.core.ui.MovieAdapter
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class MovieFragment : Fragment() {
@@ -47,12 +46,12 @@ class MovieFragment : Fragment() {
             movieViewModel.movies.observe(viewLifecycleOwner) { movie ->
                 if (movie  != null) {
                     when (movie) {
-                        is Resource.Loading -> binding.progressBar.visibility = View.VISIBLE
-                        is Resource.Success -> {
+                        is com.drsync.core.data.Resource.Loading -> binding.progressBar.visibility = View.VISIBLE
+                        is com.drsync.core.data.Resource.Success -> {
                             binding.progressBar.visibility = View.GONE
                             movieAdapter.setData(movie.data)
                         }
-                        is Resource.Error -> {
+                        is com.drsync.core.data.Resource.Error -> {
                             binding.progressBar.visibility = View.GONE
                             binding.viewError.root.visibility = View.VISIBLE
                             binding.viewError.tvError.text =

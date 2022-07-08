@@ -1,11 +1,11 @@
 package com.benny.movieapp
 
 import android.app.Application
-import com.benny.movieapp.core.di.databaseModule
-import com.benny.movieapp.core.di.networkModule
-import com.benny.movieapp.core.di.repositoryModule
 import com.benny.movieapp.di.useCaseModule
 import com.benny.movieapp.di.viewModelModule
+import com.drsync.core.di.databaseModule
+import com.drsync.core.di.networkModule
+import com.drsync.core.di.repositoryModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin

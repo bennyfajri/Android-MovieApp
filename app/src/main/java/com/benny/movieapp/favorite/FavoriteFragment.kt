@@ -8,14 +8,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.benny.movieapp.R
-import com.benny.movieapp.core.ui.MovieAdapter
 import com.benny.movieapp.databinding.FragmentFavoriteBinding
 import com.benny.movieapp.details.DetailActivity
 import com.benny.movieapp.details.DetailActivity.Companion.EXTRA_DATA
+import com.drsync.core.ui.MovieAdapter
 import org.koin.android.viewmodel.ext.android.viewModel
 
 
-class FavoriteFragment : Fragment(R.layout.fragment_favorite) {
+class FavoriteFragment : Fragment() {
 
     private val favoriteViewModel: FavoriteViewModel by viewModel()
 
