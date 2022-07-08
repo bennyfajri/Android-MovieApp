@@ -1,4 +1,4 @@
-package com.drsync.movieapp.favorite
+package com.drsync.movieapp.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData

@@ -1,4 +1,4 @@
-package com.benny.movieapp.movie
+package com.drsync.movieapp.viewmodel
 
 
 import androidx.lifecycle.ViewModel

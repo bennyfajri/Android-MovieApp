@@ -1,8 +1,8 @@
 package com.benny.movieapp
 
 import android.app.Application
-import com.benny.movieapp.di.useCaseModule
-import com.benny.movieapp.di.viewModelModule
+import com.drsync.movieapp.di.useCaseModule
+import com.drsync.movieapp.di.viewModelModule
 import com.drsync.core.di.databaseModule
 import com.drsync.core.di.networkModule
 import com.drsync.core.di.repositoryModule
@@ -22,8 +22,8 @@ class MovieApplication : Application() {
                     databaseModule,
                     networkModule,
                     repositoryModule,
-                    useCaseModule,
-                    viewModelModule
+                    com.drsync.movieapp.di.useCaseModule,
+                    com.drsync.movieapp.di.viewModelModule
                 )
             )
         }

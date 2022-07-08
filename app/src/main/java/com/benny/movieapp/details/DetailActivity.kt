@@ -8,6 +8,7 @@ import com.benny.movieapp.databinding.ActivityDetailBinding
 import com.bumptech.glide.Glide
 import com.drsync.core.domain.model.Movie
 import com.drsync.core.utils.Constant.IMAGE_URL
+import com.drsync.movieapp.viewmodel.DetailsViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class DetailActivity : AppCompatActivity() {

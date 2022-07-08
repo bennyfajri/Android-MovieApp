@@ -13,6 +13,7 @@ import com.benny.movieapp.databinding.FragmentMovieBinding
 import com.benny.movieapp.details.DetailActivity
 import com.benny.movieapp.details.DetailActivity.Companion.EXTRA_DATA
 import com.drsync.core.ui.MovieAdapter
+import com.drsync.movieapp.viewmodel.MovieViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class MovieFragment : Fragment() {

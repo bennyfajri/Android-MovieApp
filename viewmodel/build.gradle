@@ -1,7 +1,6 @@
 plugins {
-    id 'com.android.dynamic-feature'
+    id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
-    id 'kotlin-parcelize'
     id 'kotlin-kapt'
 }
 
@@ -12,7 +11,10 @@ android {
 
     defaultConfig {
         minSdk 21
+        targetSdk 32
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -28,19 +30,10 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    buildFeatures {
-        viewBinding true
-    }
 }
 
 dependencies {
     implementation project(":core")
-    implementation project(":app")
-    implementation project(":viewmodel")
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.0"
-    implementation 'androidx.appcompat:appcompat:1.4.2'
-    implementation 'com.google.android.material:material:1.4.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-
 }
