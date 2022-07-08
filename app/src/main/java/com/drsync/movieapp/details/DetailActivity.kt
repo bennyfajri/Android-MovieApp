@@ -1,10 +1,10 @@
-package com.benny.movieapp.details
+package com.drsync.movieapp.details
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import com.benny.movieapp.R
-import com.benny.movieapp.databinding.ActivityDetailBinding
+import com.drsync.movieapp.R
+import com.drsync.movieapp.databinding.ActivityDetailBinding
 import com.bumptech.glide.Glide
 import com.drsync.core.domain.model.Movie
 import com.drsync.core.utils.Constant.IMAGE_URL

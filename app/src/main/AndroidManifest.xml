@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.benny.movieapp">
+    package="com.drsync.movieapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".MovieApplication"
+        android:name="com.drsync.movieapp.MovieApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -13,11 +13,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MovieApp">
         <activity
-            android:name="com.benny.movieapp.details.DetailActivity"
+            android:name="com.drsync.movieapp.details.DetailActivity"
             android:label="@string/title_activity_detail_home"
             android:theme="@style/Theme.MovieApp.NoActionBar"/>
         <activity
-            android:name=".MainActivity"
+            android:name="com.drsync.movieapp.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

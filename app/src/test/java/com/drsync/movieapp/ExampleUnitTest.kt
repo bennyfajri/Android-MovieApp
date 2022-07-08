@@ -1,4 +1,4 @@
-package com.benny.movieapp
+package com.drsync.movieapp
 
 import org.junit.Test
 

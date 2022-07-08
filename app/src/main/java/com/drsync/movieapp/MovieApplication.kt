@@ -1,4 +1,4 @@
-package com.benny.movieapp
+package com.drsync.movieapp
 
 import android.app.Application
 import com.drsync.core.di.databaseModule

@@ -1,4 +1,4 @@
-package com.benny.movieapp.movie
+package com.drsync.movieapp.movie
 
 import android.app.SearchManager
 import android.content.Context
@@ -8,10 +8,10 @@ import android.view.*
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.benny.movieapp.R
-import com.benny.movieapp.databinding.FragmentMovieBinding
-import com.benny.movieapp.details.DetailActivity
-import com.benny.movieapp.details.DetailActivity.Companion.EXTRA_DATA
+import com.drsync.movieapp.R
+import com.drsync.movieapp.databinding.FragmentMovieBinding
+import com.drsync.movieapp.details.DetailActivity
+import com.drsync.movieapp.details.DetailActivity.Companion.EXTRA_DATA
 import com.drsync.core.ui.MovieAdapter
 import com.drsync.movieapp.viewmodel.MovieViewModel
 import org.koin.android.viewmodel.ext.android.viewModel

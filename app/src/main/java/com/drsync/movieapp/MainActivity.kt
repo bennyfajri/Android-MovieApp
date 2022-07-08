@@ -1,4 +1,4 @@
-package com.benny.movieapp
+package com.drsync.movieapp
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -6,7 +6,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.benny.movieapp.databinding.ActivityMainBinding
+import com.drsync.movieapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(){
 
