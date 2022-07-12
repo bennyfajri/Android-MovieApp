@@ -21,7 +21,11 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -62,5 +66,9 @@ dependencies {
     //by viewModels di Activity dan Fragment
     implementation "androidx.activity:activity-ktx:1.5.0"
     implementation "androidx.fragment:fragment-ktx:1.5.0"
+
+    //SQLCipher
+    implementation "net.zetetic:android-database-sqlcipher:4.4.0"
+    implementation "androidx.sqlite:sqlite-ktx:2.2.0"
 
 }
