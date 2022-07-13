@@ -13,18 +13,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MovieApp">
         <activity
-            android:name="com.drsync.movieapp.details.DetailActivity"
-            android:label="@string/title_activity_detail_home"
-            android:theme="@style/Theme.MovieApp.NoActionBar"/>
-        <activity
-            android:name="com.drsync.movieapp.MainActivity"
-            android:exported="true">
+            android:name=".splash.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.MovieApp.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.drsync.movieapp.details.DetailActivity"
+            android:label="@string/title_activity_detail_home"
+            android:theme="@style/Theme.MovieApp.NoActionBar" />
+        <activity
+            android:name="com.drsync.movieapp.MainActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>

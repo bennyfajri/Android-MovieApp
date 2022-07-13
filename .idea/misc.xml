@@ -3,12 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/App/Android/MovieApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/App/Android/MovieApp/app/src/main/res/drawable-v24/splash.xml" value="0.1" />
+        <entry key="..\:/App/Android/MovieApp/app/src/main/res/drawable/favorite_toggle.xml" value="0.1" />
         <entry key="..\:/App/Android/MovieApp/app/src/main/res/drawable/ic_error.xml" value="0.1" />
         <entry key="..\:/App/Android/MovieApp/app/src/main/res/drawable/ic_favorite.xml" value="0.195" />
         <entry key="..\:/App/Android/MovieApp/app/src/main/res/drawable/ic_favorite_no_border.xml" value="0.195" />
+        <entry key="..\:/App/Android/MovieApp/app/src/main/res/drawable/ic_favorite_red.xml" value="0.1" />
+        <entry key="..\:/App/Android/MovieApp/app/src/main/res/drawable/ic_favorite_white.xml" value="0.1" />
+        <entry key="..\:/App/Android/MovieApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/App/Android/MovieApp/app/src/main/res/drawable/ic_movie.xml" value="0.1" />
+        <entry key="..\:/App/Android/MovieApp/app/src/main/res/drawable/ic_search.xml" value="0.1" />
         <entry key="..\:/App/Android/MovieApp/app/src/main/res/layout/activity_detail.xml" value="0.176" />
         <entry key="..\:/App/Android/MovieApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/App/Android/MovieApp/app/src/main/res/layout/activity_splash.xml" value="0.25" />
         <entry key="..\:/App/Android/MovieApp/app/src/main/res/layout/app_bar_main.xml" value="0.1" />
         <entry key="..\:/App/Android/MovieApp/app/src/main/res/layout/content_detail_film.xml" value="0.1" />
         <entry key="..\:/App/Android/MovieApp/app/src/main/res/layout/content_main.xml" value="0.1" />
@@ -26,7 +34,7 @@
         <entry key="..\:/App/Android/MovieApp/core/src/main/res/drawable/ic_circle.xml" value="0.232" />
         <entry key="..\:/App/Android/MovieApp/core/src/main/res/drawable/ic_error.xml" value="0.1" />
         <entry key="..\:/App/Android/MovieApp/core/src/main/res/drawable/shade.xml" value="0.1" />
-        <entry key="..\:/App/Android/MovieApp/core/src/main/res/layout/item_movie.xml" value="0.33" />
+        <entry key="..\:/App/Android/MovieApp/core/src/main/res/layout/item_movie.xml" value="0.5" />
         <entry key="..\:/App/Android/MovieApp/favorite/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/App/Android/MovieApp/favorite/src/main/res/layout/fragment_blank.xml" value="0.1" />
         <entry key="..\:/App/Android/MovieApp/favorite/src/main/res/layout/fragment_favorite.xml" value="0.1" />
