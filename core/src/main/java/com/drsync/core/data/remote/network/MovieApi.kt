@@ -10,10 +10,4 @@ interface MovieApi {
     suspend fun getNowPlayingMovies(
         @Query("api_key") apiKey: String = BuildConfig.MOVIEDB_API_KEY
     ): ListMovieResponse
-
-//    @GET("search/movie")
-//    suspend fun searchMovie(
-//        @Query("query") query: String,
-//        @Query("api_key") apiKey: String = BuildConfig.MOVIEDB_API_KEY
-//    ): ListMovieResponse
 }

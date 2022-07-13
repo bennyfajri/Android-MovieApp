@@ -31,21 +31,4 @@ class RemoteDataSource(
         }.flowOn(Dispatchers.IO)
     }
 
-//    fun searchMovie(query: String): Flow<ApiResponse<List<MovieResponse>>>{
-//        return flow {
-//            try{
-//                val response = apiService.searchMovie(query)
-//                val dataArray = response.results
-//                if(dataArray.isNotEmpty()){
-//                    emit(ApiResponse.Success(response.results))
-//                }else{
-//                    emit(ApiResponse.Empty)
-//                }
-//            }catch (e: Exception){
-//                emit(ApiResponse.Error(e.toString()))
-//                Log.d(TAG, "searchMovie: $e")
-//            }
-//        }.flowOn(Dispatchers.IO)
-//    }
-
 }

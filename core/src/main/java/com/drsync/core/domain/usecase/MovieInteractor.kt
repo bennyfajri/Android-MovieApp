@@ -8,8 +8,6 @@ class MovieInteractor(
 ) : MovieUseCase {
     override fun getAllMovie() = movieRepository.getAllMovie()
 
-//    override fun getSearchMovie(query: String) = movieRepository.getSearchMovie(query)
-
     override fun getFavoriteMovie() = movieRepository.getFavoriteMovie()
 
     override fun setFavoriteMovie(movie: Movie, state: Boolean) = movieRepository.setFavoriteMovie(movie, state)
