@@ -21,7 +21,8 @@
             android:layout_height="match_parent"
             android:adjustViewBounds="true"
             android:scaleType="fitXY"
-            tools:src="@tools:sample/backgrounds/scenic" />
+            tools:src="@tools:sample/backgrounds/scenic"
+            android:contentDescription="@string/image_poster_film" />
 
         <ImageView
             android:id="@+id/imageView"
@@ -31,7 +32,8 @@
             android:layout_marginTop="16dp"
             android:src="@drawable/ic_circle"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/layout_rating_film" />
 
         <TextView
             android:id="@+id/tv_rating"

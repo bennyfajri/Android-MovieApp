@@ -2,4 +2,6 @@
 <resources>
     <string name="movie_title">Avengers</string>
     <string name="_6_9">6.9</string>
+    <string name="image_poster_film">Image Poster Film</string>
+    <string name="layout_rating_film">Layout rating film</string>
 </resources>
