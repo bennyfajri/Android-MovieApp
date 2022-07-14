@@ -35,8 +35,7 @@ class FavoriteFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         if(activity != null){
-            val movieAdapter = MovieAdapter()
-            movieAdapter.onItemClick = { selectedData ->
+            val movieAdapter = MovieAdapter{ selectedData ->
                 Intent(activity, DetailActivity::class.java).also {
                     it.putExtra(EXTRA_DATA, selectedData)
                     startActivity(it)
@@ -44,18 +43,24 @@ class FavoriteFragment : Fragment() {
             }
 
             favoriteViewModel.favoriteMovie.observe(viewLifecycleOwner){ movieData ->
-                movieAdapter.setData(movieData)
+                movieAdapter.submitList(movieData)
                 binding.viewEmpty.root.visibility =
                     if(movieData.isNotEmpty()) View.GONE else View.VISIBLE
+                setupRecyclerView(movieAdapter)
             }
 
-            binding.rvMovie.apply {
-                layoutManager = LinearLayoutManager(context)
-                setHasFixedSize(true)
-                adapter = movieAdapter
-            }
+            setupRecyclerView(movieAdapter)
         }
     }
+
+    private fun setupRecyclerView(movieAdapter: MovieAdapter) {
+        binding.rvMovie.apply {
+            layoutManager = LinearLayoutManager(context)
+            setHasFixedSize(true)
+            adapter = movieAdapter
+        }
+    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

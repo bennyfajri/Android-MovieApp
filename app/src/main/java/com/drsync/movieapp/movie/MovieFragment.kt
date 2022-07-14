@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.drsync.core.data.Resource
+import com.drsync.core.domain.model.Movie
 import com.drsync.core.ui.MovieAdapter
 import com.drsync.movieapp.R
 import com.drsync.movieapp.databinding.FragmentMovieBinding
@@ -16,8 +18,6 @@ import com.drsync.movieapp.viewmodel.MovieViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class MovieFragment : Fragment() {
-
-    private val movieViewModel: MovieViewModel by viewModel()
 
     private var _binding : FragmentMovieBinding? = null
     private val binding get() = _binding!!
@@ -35,8 +35,9 @@ class MovieFragment : Fragment() {
 
         if (activity != null) {
 
-            val movieAdapter = MovieAdapter()
-            movieAdapter.onItemClick = { selectedData ->
+            val movieViewModel: MovieViewModel by viewModel()
+
+            val movieAdapter = MovieAdapter { selectedData ->
                 Intent(activity, DetailActivity::class.java).also {
                     it.putExtra(EXTRA_DATA, selectedData)
                     startActivity(it)
@@ -46,12 +47,13 @@ class MovieFragment : Fragment() {
             movieViewModel.movies.observe(viewLifecycleOwner) { movie ->
                 if (movie  != null) {
                     when (movie) {
-                        is com.drsync.core.data.Resource.Loading -> binding.progressBar.visibility = View.VISIBLE
-                        is com.drsync.core.data.Resource.Success -> {
+                        is Resource.Loading -> binding.progressBar.visibility = View.VISIBLE
+                        is Resource.Success -> {
                             binding.progressBar.visibility = View.GONE
-                            movieAdapter.setData(movie.data)
+                            movieAdapter.submitList(movie.data as List<Movie>)
+                            setupRecyclerView(movieAdapter)
                         }
-                        is com.drsync.core.data.Resource.Error -> {
+                        is Resource.Error -> {
                             binding.progressBar.visibility = View.GONE
                             binding.viewError.root.visibility = View.VISIBLE
                             binding.viewError.tvError.text =
@@ -61,11 +63,15 @@ class MovieFragment : Fragment() {
                 }
             }
 
-            with(binding.rvMovie) {
-                layoutManager = LinearLayoutManager(context)
-                setHasFixedSize(true)
-                adapter = movieAdapter
-            }
+            setupRecyclerView(movieAdapter)
+        }
+    }
+
+    private fun setupRecyclerView(movieAdapter: MovieAdapter) {
+        binding.rvMovie.apply {
+            layoutManager = LinearLayoutManager(requireContext())
+            setHasFixedSize(true)
+            adapter = movieAdapter
         }
     }
 
