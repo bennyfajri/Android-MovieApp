@@ -11,7 +11,7 @@ class LocalDataSource(private val movieDao: MovieDao) {
 
     suspend fun insertMovie(tourismList: List<MovieEntity>) = movieDao.insertMovie(tourismList)
 
-    fun setFavoriteMovie(movie: MovieEntity, newState: Boolean) {
+    suspend fun setFavoriteMovie(movie: MovieEntity, newState: Boolean) {
         movie.isFavorite = newState
         movieDao.updateFavoriteMovie(movie)
     }

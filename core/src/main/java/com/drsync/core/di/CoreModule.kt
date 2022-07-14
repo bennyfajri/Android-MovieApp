@@ -7,7 +7,6 @@ import com.drsync.core.data.local.room.MovieDatabase
 import com.drsync.core.data.remote.RemoteDataSource
 import com.drsync.core.data.remote.network.MovieApi
 import com.drsync.core.domain.repository.IMovieRepository
-import com.drsync.core.utils.AppExecutors
 import com.drsync.core.utils.Constant.BASE_URL
 import net.sqlcipher.database.SQLiteDatabase
 import net.sqlcipher.database.SupportFactory
@@ -63,6 +62,5 @@ val networkModule = module {
 val repositoryModule = module {
     single { LocalDataSource(get()) }
     single { RemoteDataSource(get()) }
-    factory { AppExecutors() }
-    single<IMovieRepository> { MovieRepository(get(), get(), get()) }
+    single<IMovieRepository> { MovieRepository(get(), get()) }
 }
